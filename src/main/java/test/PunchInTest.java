@@ -2,6 +2,8 @@ package test;
 
 import core.DriverSingleton;
 import element.ConfirmationPopup;
+import model.EmployeeModel;
+import model.UserFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -13,8 +15,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PunchInTest {
-
-  private WebDriver driver;
 
   @Test(description = "Punch in test")
   public void punchInTest() {
@@ -29,11 +29,12 @@ public class PunchInTest {
       e.printStackTrace();
     }
 
+    EmployeeModel user = UserFactory.createUser(property.getProperty("kronos.username"), property.getProperty("kronos.password"));
     DashboardPage dashboardPage =
         loginPage.login(
             property.getProperty("kronos.username"), property.getProperty("kronos.password"));
     ConfirmationPopup confirmationPopup = dashboardPage.punchIn();
-    DashboardPage dashboardPage1 = confirmationPopup.clickOkClockButton();
+    confirmationPopup.clickOkClockButton();
   }
 
   @AfterClass(description = "Close browser")

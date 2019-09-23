@@ -11,8 +11,7 @@ public class Popover extends UiElement {
 
   public NotesPopup openCommentPopup() {
 
-    getDriver().switchTo().defaultContent();
-    switchToFrame();
+
     driver.findElement(ADD_NOTE_LOCATOR).click();
     return new NotesPopup();
   }

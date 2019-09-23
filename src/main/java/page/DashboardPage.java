@@ -21,7 +21,7 @@ public class DashboardPage extends AbstractPage {
   }
 
   public ConfirmationPopup punchOut() {
-    new Actions(driver).doubleClick(driver.findElement(CLOCK_OUT_LOCATOR)).build().perform();
+    driver.findElement(CLOCK_OUT_LOCATOR).click();
     return new ConfirmationPopup();
   }
 
