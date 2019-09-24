@@ -10,7 +10,7 @@ public class LoginPage extends AbstractPage {
   private static final By LOGIN_BUTTON_LOCATOR = By.xpath("//input[@name='LoginButton']");
 
   public LoginPage open() {
-    driver.get(DirectUrl.URL);
+    driver.get(DirectUrl.URLmain);
     return this;
   }
 

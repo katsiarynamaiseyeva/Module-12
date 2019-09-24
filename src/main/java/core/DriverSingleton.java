@@ -1,6 +1,7 @@
 package core;
 
-import config.GlobalConfig;
+import config.BrowserConfig;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -25,10 +26,11 @@ public class DriverSingleton {
 
     CustomWebDriver webDriver = null;
     DesiredCapabilities capabilities;
-    String seleniumServerUrl = GlobalConfig.getSeleniumServerUrl();
+    String seleniumServerUrl = BrowserConfig.getSeleniumServerUrl();
 
-    switch (GlobalConfig.getBrowserType()) {
+    switch (BrowserConfig.getBrowserType()) {
       case CHROME:
+        WebDriverManager.chromedriver().setup();
         capabilities = DesiredCapabilities.chrome();
         capabilities.setPlatform(Platform.WINDOWS);
         try {
@@ -39,6 +41,7 @@ public class DriverSingleton {
         }
         break;
       case FIREFOX:
+        WebDriverManager.firefoxdriver().setup();
         capabilities = DesiredCapabilities.firefox();
         capabilities.setPlatform(Platform.WINDOWS);
         try {

@@ -23,8 +23,6 @@ public class UiElement extends RemoteWebElement {
         .executeScript("arguments[0].style.border='0px'", driver.findElement(locator));
   }
 
-
-
   public void highlightElement(WebDriver driver, WebElement element) {
     String bg = element.getCssValue("backgroundColor");
     JavascriptExecutor js = ((JavascriptExecutor) driver);

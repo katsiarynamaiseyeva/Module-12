@@ -4,7 +4,6 @@ import core.DriverSingleton;
 import element.ConfirmationPopup;
 import model.EmployeeModel;
 import model.UserFactory;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import page.DashboardPage;
@@ -29,7 +28,9 @@ public class PunchInTest {
       e.printStackTrace();
     }
 
-    EmployeeModel user = UserFactory.createUser(property.getProperty("kronos.username"), property.getProperty("kronos.password"));
+    EmployeeModel user =
+        UserFactory.createUser(
+            property.getProperty("kronos.username"), property.getProperty("kronos.password"));
     DashboardPage dashboardPage =
         loginPage.login(
             property.getProperty("kronos.username"), property.getProperty("kronos.password"));

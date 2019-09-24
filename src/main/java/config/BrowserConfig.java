@@ -1,6 +1,6 @@
 package config;
 
-public class GlobalConfig {
+public class BrowserConfig {
   private static BrowserType browserType = BrowserType.CHROME;
   private static String seleniumServerUrl = "http://127.0.0.1:4444/wd/hub";
 

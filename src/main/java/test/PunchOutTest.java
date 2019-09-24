@@ -27,7 +27,9 @@ public class PunchOutTest {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    EmployeeModel user = UserFactory.createUser(property.getProperty("kronos.username"), property.getProperty("kronos.password"));
+    EmployeeModel user =
+        UserFactory.createUser(
+            property.getProperty("kronos.username"), property.getProperty("kronos.password"));
     DashboardPage dashboardPage =
         loginPage.login(
             property.getProperty("kronos.username"), property.getProperty("kronos.password"));

@@ -8,7 +8,10 @@ import model.UserFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-import page.*;
+import page.HamburgerMenu;
+import page.LoginPage;
+import page.OtherFormsOpenTabPage;
+import page.OtherFormsPage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,7 +32,9 @@ public class AddNoteTest {
       e.printStackTrace();
     }
 
-    EmployeeModel user = UserFactory.createUser(property.getProperty("kronos.username"), property.getProperty("kronos.password"));
+    EmployeeModel user =
+        UserFactory.createUser(
+            property.getProperty("kronos.username"), property.getProperty("kronos.password"));
     loginPage.login(user.getUsername(), user.getPassword());
     new HamburgerMenu().navigateToForms();
     new OtherFormsPage().navigateToOpenTab();

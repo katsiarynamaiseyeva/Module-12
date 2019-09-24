@@ -1,24 +1,38 @@
 package runner;
 
+import config.BrowserConfig;
 import config.BrowserType;
-import config.GlobalConfig;
 import listener.Listener;
 import org.testng.TestNG;
 import org.testng.xml.XmlSuite;
+import page.DirectUrl;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 public class Runner {
 
   public static void main(String[] args) {
-    String browserType = args[0];
+    String browserType = args[1];
+    String env =args[5];
     String xmlSuiteName = "src/main/resources/testng_regression.xml";
 
-    GlobalConfig.setBrowserType(BrowserType.fromString(browserType));
+    Properties property = new Properties();
+    FileInputStream fis;
+    try {
+      fis = new FileInputStream("src/main/resources/env.properties");
+      property.load(fis);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+  DirectUrl.setURL(property.getProperty(env));
+
+
+    BrowserConfig.setBrowserType(BrowserType.fromString(browserType));
 
     TestNG testNG = new TestNG(false);
     XmlSuite suite = new XmlSuite();
@@ -39,7 +53,7 @@ public class Runner {
         "Run with parameters: browser "
             + browserType
             + ", selenium server url "
-            + GlobalConfig.getSeleniumServerUrl()
+            + BrowserConfig.getSeleniumServerUrl()
             + " in suite "
             + xmlSuiteName);
     testNG.run();

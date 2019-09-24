@@ -30,10 +30,14 @@ public class EmployeeModel {
 
   @Override
   public String toString() {
-    return "EmployeeModel{" +
-            "username='" + username + '\'' +
-            ", password='" + password + '\'' +
-            '}';
+    return "EmployeeModel{"
+        + "username='"
+        + username
+        + '\''
+        + ", password='"
+        + password
+        + '\''
+        + '}';
   }
 
   @Override
@@ -41,14 +45,11 @@ public class EmployeeModel {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     EmployeeModel that = (EmployeeModel) o;
-    return Objects.equals(username, that.username) &&
-            Objects.equals(password, that.password);
+    return Objects.equals(username, that.username) && Objects.equals(password, that.password);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(username, password);
   }
-  }
-
-
+}
