@@ -6,9 +6,9 @@ public class HamburgerMenu extends AbstractPage {
 
   private static final By HAMBURGER_MENU_BUTTON_LOCATOR = By.xpath("//*[@id='mainMenuBtn']");
   private static final By TEAM_BUTTON_LOCATOR = By.xpath("//button[@title='Team']");
-  private static final By HR_BUTTON_LOCATOR = By.xpath("//button[@aria-label='HR section']");
+  private static final By HR_BUTTON_LOCATOR = By.xpath("//button[@aria-label='HRsection']");
   private static final By FORMS_BUTTON_LOCATOR =
-      By.xpath("//button[@aria-label='HR - Forms section']");
+      By.xpath("//button[@aria-label='HR - Formssection']");
   private static final By OTHER_FORMS_BUTTON_LOCATOR =
       By.cssSelector("#tab-manager [aria-label='Forms - Other Forms']");
 

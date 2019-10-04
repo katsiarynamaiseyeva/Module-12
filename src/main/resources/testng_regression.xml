@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Calculator" verbose="1" parallel="methods" thread-count="5" data-provider-thread-count="3">
 
- <!--   <groups>
-        <run>
-            <include name="regression"></include>
-        </run>
+    <!--   <groups>
+           <run>
+               <include name="regression"></include>
+           </run>
 
-    </groups>-->
+       </groups>-->
 
     <test name="AddNoteTest">
         <classes>
@@ -14,7 +14,7 @@
         </classes>
     </test>
 
-  <test name="PunchInTest">
+    <test name="PunchInTest">
         <classes>
             <class name="test.PunchInTest"/>
         </classes>

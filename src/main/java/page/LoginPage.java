@@ -17,6 +17,6 @@ public class LoginPage extends AbstractPage {
   public DashboardPage login(String username, String password) {
     driver.findElement(USERNAME_FIELD_LOCATOR).sendKeys(username);
     driver.findElement(PASSWORD_FIELD_LOCATOR).sendKeys(password, Keys.ENTER);
-    return new DashboardPage(driver);
+    return new DashboardPage();
   }
 }

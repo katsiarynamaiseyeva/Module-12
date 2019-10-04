@@ -1,18 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Smoke Test" verbose="1" parallel="methods" thread-count="5" data-provider-thread-count="3">
 
-	<groups>
-		<run>
-			<include name="smoke"></include>
-		</run>
-	</groups>
+    <groups>
+        <run>
+            <include name="smoke"></include>
+        </run>
+    </groups>
 
 
-	<test name="PunchInTest">
-		<classes>
-			<class name="test.PunchInTest"/>
-		</classes>
-	</test>
+    <test name="PunchInTest">
+        <classes>
+            <class name="test.PunchInTest"/>
+        </classes>
+    </test>
 
 </suite>
 

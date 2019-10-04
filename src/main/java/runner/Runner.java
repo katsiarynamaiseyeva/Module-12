@@ -17,7 +17,7 @@ public class Runner {
 
   public static void main(String[] args) {
     String browserType = args[1];
-    String env =args[5];
+    String env = args[5];
     String xmlSuiteName = "src/main/resources/testng_regression.xml";
 
     Properties property = new Properties();
@@ -29,8 +29,7 @@ public class Runner {
       e.printStackTrace();
     }
 
-  DirectUrl.setURL(property.getProperty(env));
-
+    DirectUrl.setURL(property.getProperty(env));
 
     BrowserConfig.setBrowserType(BrowserType.fromString(browserType));
 

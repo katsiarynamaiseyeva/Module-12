@@ -2,7 +2,6 @@ package page;
 
 import element.ConfirmationPopup;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class DashboardPage extends AbstractPage {
 
@@ -10,7 +9,7 @@ public class DashboardPage extends AbstractPage {
       By.xpath("//button[@class='time-clock-button' and @data-type='PUNCH']");
   private static final By CLOCK_OUT_LOCATOR = By.xpath("//*[@data-type='PUNCH_OUT']");
 
-  public DashboardPage(WebDriver driver) {
+  public DashboardPage() {
     super();
   }
 

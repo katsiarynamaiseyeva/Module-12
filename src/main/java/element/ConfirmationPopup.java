@@ -9,6 +9,6 @@ public class ConfirmationPopup extends UiElement {
 
   public DashboardPage clickOkClockButton() {
     driver.findElement(OK_BUTTON_CLOCK_LOCATOR).click();
-    return new DashboardPage(driver);
+    return new DashboardPage();
   }
 }

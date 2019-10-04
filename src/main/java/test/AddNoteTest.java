@@ -43,7 +43,7 @@ public class AddNoteTest {
 
     Popover popover = new OtherFormsOpenTabPage().clickOnThreeDots();
     NotesPopup comment = popover.openCommentPopup();
-    OtherFormsOpenTabPage otherFormsOpenTabPage1 = comment.addComment("comment text");
+    comment.addComment("comment text");
 
     OtherFormsOpenTabPage otherFormsOpenTabPage2 = new OtherFormsOpenTabPage();
 
